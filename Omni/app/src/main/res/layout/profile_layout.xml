@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_retailer_profile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.android.omni.RetailerProfileActivity">
+
+
+    <LinearLayout
+        android:id="@+id/Retailer_Photos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f1f1"
+        android:orientation="vertical"
+        tools:context="com.example.android.samplepageui.MainActivity">
+
+        <FrameLayout
+            style="@style/Frame"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/big_line_heightx4"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/store_icon"
+                        android:src="@drawable/store_main" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:orientation="vertical"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="ZAyRA lJlyykilkjyffffffreddd"
+                            android:textAllCaps="true"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:paddingTop="2dp"
+                            android:text="Pheonix market city city city city grtereddd ssd, whitefield"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="4.8"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="2488"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            style="@style/Frame"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/big_line_heightx2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/call_button_vector" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Open Now : 11:00am to 11:00pm"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/big_line_heightx2"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/rate"
+                        style="@style/buttons_style"
+                        android:layout_height="48dp"
+                        android:background="@drawable/ripple_button"
+                        android:clickable="true"
+                        android:elevation="4dp"
+                        android:text="rate"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                    <Button
+                        style="@style/buttons_style"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:background="@drawable/ripple_button"
+                        android:elevation="4dp"
+                        android:text="Check-in"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                    <Button
+                        style="@style/buttons_style"
+                        android:background="@drawable/ripple_button"
+                        android:elevation="4dp"
+                        android:text="Follow"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout style="@style/Frame">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/extra_texts"
+                    android:text="@string/ongoing_offer_upto_80_off" />
+
+                <View style="@style/divider_line" />
+
+                <TextView
+                    style="@style/extra_texts"
+                    android:text="@string/new_collection_in_store" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout style="@style/Frame">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Header_retail_profile"
+                    android:text="@string/store_details" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textline"
+                        style="@style/Side_index_style"
+                        android:text="@string/for_word" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/man_icon" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/man_icon" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:backgroundTint="@color/colorAccent"
+                        android:src="@drawable/man_icon" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/Side_index_style"
+                        android:text="@string/category" />
+
+                    <TextView
+                        style="@style/details_style"
+                        android:layout_width="match_parent"
+                        android:gravity="end"
+                        android:text="@string/apparel_footwear_accessories_travel"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/Side_index_style"
+                        android:text="@string/purpose" />
+
+                    <TextView
+                        style="@style/details_style"
+                        android:layout_width="match_parent"
+                        android:gravity="end"
+                        android:text="@string/party_ethnic_sports_work_casual"
+                        android:textAllCaps="false"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/Side_index_style"
+                        android:text="@string/store_type" />
+
+                    <TextView
+                        style="@style/details_style"
+                        android:layout_width="match_parent"
+                        android:gravity="end"
+                        android:text="@string/multi_branded"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/Side_index_style"
+                        android:text="@string/store_size" />
+
+                    <TextView
+                        style="@style/details_style"
+                        android:layout_width="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="end"
+                        android:text="@string/large"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/Side_index_style"
+                        android:text="@string/trial_rooms" />
+
+                    <TextView
+                        style="@style/details_style"
+                        android:layout_width="match_parent"
+                        android:gravity="end"
+                        android:text="2"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Side_index_style"
+                    android:layout_height="18dp"
+                    android:drawableEnd="@drawable/location_vector"
+                    android:drawablePadding="@dimen/big_line_height"
+                    android:drawableRight="@drawable/location_vector"
+                    android:text="@string/exchange_policy" />
+
+                <TextView
+                    style="@style/Side_index_style"
+                    android:layout_height="18dp"
+                    android:drawableEnd="@drawable/location_vector"
+                    android:drawableRight="@drawable/location_vector"
+                    android:text="About the store"
+
+                    />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout style="@style/Frame">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Header_retail_profile"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/product_types" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:gravity="end"
+                        android:text="@string/see_more"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        style="@style/tags"
+                        android:layout_gravity="left"
+                        android:background="@drawable/ripple_tags"
+                        android:padding="8dp"
+                        android:text="@string/formal_shirt" />
+
+                    <TextView
+                        style="@style/tags"
+                        android:background="@drawable/ripple_tags"
+                        android:text="@string/v_neck_shirt" />
+
+                    <TextView
+                        style="@style/tags"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/ripple_tags"
+                        android:text="@string/belt" />
+
+                    <TextView
+                        style="@style/tags"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/ripple_tags"
+                        android:text="@string/track_suit" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout style="@style/Frame">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Header_retail_profile"
+                        android:text="@string/address" />
+
+                    <TextView
+                        style="@style/details_style"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/Lengthy_string" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/location_vector" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout style="@style/Frame">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Header_retail_profile"
+                    android:text="@string/similar_stores" />
+
+
+                <HorizontalScrollView
+                    android:id="@+id/store_suggestions_horizontal_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/store_suggestions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_icon_re" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_icon" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_icon_rec" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_i" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_ii" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_iii" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_iiiii" />
+
+                        <ImageView
+                            style="@style/store_icon"
+                            android:src="@drawable/store_icon_reccc" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

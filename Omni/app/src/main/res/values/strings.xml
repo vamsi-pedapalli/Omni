@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Omni</string>
+
+    <string name="underlined_rate">Rate</string>
+    <string name="Lengthy_string">Ground floor, pheonix market city, mahadevapura, whitefield,- 888588</string>
+    <string name="too_lengthy">Address : Ground floor, pheonix market city, mahadevapura, whitefield,- 888588Address : Ground floor, pheonix market city, mahadevapura, whitefield,- 888588</string>
+    <string name="similar_stores">Similar Stores</string>
+    <string name="men_women_children">Men | Women | Children</string>
+    <string name="for_word">For</string>
+    <string name="store_details">Store Details</string>
+    <string name="exchange_policy">Exchange policy</string>
+    <string name="store_size">Store Size</string>
+    <string name="large">Large</string>
+    <string name="trial_rooms">Trial Rooms</string>
+    <string name="category">Category</string>
+    <string name="apparel_footwear_accessories_travel">Apparel | Footwear | Accessories | Travel</string>
+    <string name="purpose">Purpose</string>
+    <string name="party_ethnic_sports_work_casual">Party | Ethnic | Sports | Work | Casual</string>
+    <string name="store_type">Store Type</string>
+    <string name="multi_branded">Multi branded</string>
+    <string name="product_types">Product types</string>
+    <string name="see_more">see more...</string>
+    <string name="formal_shirt">Formal shirt</string>
+    <string name="v_neck_shirt">V-neck shirt</string>
+    <string name="belt">Belt</string>
+    <string name="track_suit">Track suit</string>
+    <string name="address">Address</string>
+    <string name="ongoing_offer_upto_80_off">Ongoing offer - upto 80% off</string>
+    <string name="new_collection_in_store">New collection in store</string>
+    <string name="share">share</string>
+    <string name="allen_solly">Allen Solly</string>
+    <string name="_100_feet_road_indiranagar">100 Feet Road, Indiranagar</string>
+    <string name="_1_2_km">1.2 km</string>
+</resources>
