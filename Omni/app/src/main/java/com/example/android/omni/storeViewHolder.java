@@ -6,12 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.android.omni.R;
-import com.example.android.omni.RetailerProfileActivity;
-import com.example.android.omni.ShopsList;
-import com.example.android.omni.Stores;
 
 import java.text.DecimalFormat;
 
@@ -31,7 +25,7 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
     private ImageView women;
     private ImageView kids;
 
-    private Stores stores;
+    private StoreModel stores;
     private Context context;
 //    private int position;
 
@@ -53,7 +47,7 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
     }
 
-    public void bindStoreData(Stores stores){
+    public void bindStoreData(StoreModel stores){
 
         this.stores = stores;
 
@@ -65,10 +59,22 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
         this.storeDistance.setText(formattedDistance);
 
         String bookmarksNumber = Integer.toString(stores.getNoOfBookmarks());
-        this.storeNoOfBookmarks.setText(bookmarksNumber);
+        this.storeNoOfBookmarks.setText(bookmarksNumber + "Marks");
 
         this.storeWallpaper.setImageResource(stores.getStoreWallpaperId());
 
+
+        if(!(stores.isThereMen())){
+            this.men.setVisibility(View.GONE);
+        }
+
+        if(!(stores.isThereWomen())){
+            this.women.setVisibility(View.GONE);
+        }
+
+        if(!(stores.isThereKids())){
+            this.kids.setVisibility(View.GONE);
+        }
     }
 
 
@@ -80,7 +86,7 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
 
 
-//        if (this.Stores != null) {
+//        if (this.StoreModel != null) {
 
 //        Toast.makeText(this.context, "Clicked on " , Toast.LENGTH_SHORT ).show();
 

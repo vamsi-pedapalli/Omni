@@ -1,19 +1,17 @@
 package com.example.android.omni;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.List;
 
-import static android.view.View.GONE;
+import static android.media.CamcorderProfile.get;
+import static com.example.android.omni.ShopsList.LOG_TAG;
 
 /**
  * Created by vamsi on 19-11-2016.
@@ -22,13 +20,21 @@ import static android.view.View.GONE;
 
 public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
 
-    private final ArrayList<Stores> stores;
+    private List<StoreModel> store = new ArrayList<>();
     private int itemResource;
     private Context context;
 
-    public StoreListAdapter(Context context, int itemResource, ArrayList<Stores> stores) {
+    public List<StoreModel> getStore() {
+        return store;
+    }
 
-        this.stores = stores;
+    public void setStore(List<StoreModel> store) {
+        this.store = store;
+    }
+
+    public StoreListAdapter(Context context, int itemResource, List<StoreModel> store) {
+
+        this.store = store;
         this.itemResource = itemResource;
         this.context = context;
     }
@@ -43,13 +49,15 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
 
     @Override
     public void onBindViewHolder(storeViewHolder holder, int position) {
-        Stores stores = this.stores.get(position);
+        StoreModel stores = this.store.get(position);
         holder.bindStoreData(stores);
     }
 
     @Override
     public int getItemCount() {
-        return this.stores.size();
+
+        Log.e(LOG_TAG, "stores size");
+        return store.size();
     }
 
 
@@ -84,7 +92,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
 //            viewHolder = (com.example.android.omni.storeViewHolder) listItemView.getTag();
 //        }
 //
-//        Stores currentStore = getItem(position);
+//        StoreModel currentStore = getItem(position);
 //
 //        viewHolder.storeName.setText(currentStore.getStoreName());
 //        viewHolder.storeAddress.setText(currentStore.getStoreAddress());
