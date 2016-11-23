@@ -17,7 +17,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.android.omni.ShopsList.LOG_TAG;
+import static com.example.android.omni.ShopsListActivity.LOG_TAG;
 
 /**
  * Created by vamsi on 05-11-2016.
@@ -109,7 +109,7 @@ public class QueryHandler {
             boolean women = baseJsonResponse.getBoolean("for_women");
             boolean kids = baseJsonResponse.getBoolean("for_kids");
             String time = openingTime + " to " + closingTime;
-            StoreModel store = new StoreModel(R.drawable.zara, storeName, area, time, 1.25, 100, men, women, kids);
+            StoreModel store = new StoreModel(R.drawable.woodland, storeName, area, time, 1.25, 100, men, women, kids);
             Store.add(store);
             Log.e("QueryUtils", storeAddress + men + women + kids);
 

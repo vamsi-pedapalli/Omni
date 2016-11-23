@@ -3,6 +3,7 @@
     package="com.example.android.omni">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,22 +14,31 @@
         <activity
             android:name=".RetailerProfileActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".ShopsList"
+            android:parentActivityName=".ShopsListActivity"
             android:theme="@style/ProfileTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ShopsList" />
+                android:value=".ShopsListActivity" />
         </activity>
         <activity
-            android:name=".ShopsList"
-            android:label="@string/app_name">
+            android:name=".ShopsListActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".HomePageActivity"
+            android:theme="@style/ProfileTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivity" />
+
+        </activity>
+        <activity android:name=".HomePageActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".HomePageActivity"></activity>
     </application>
 
 </manifest>

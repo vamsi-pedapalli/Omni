@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.media.CamcorderProfile.get;
-import static com.example.android.omni.ShopsList.LOG_TAG;
+import static com.example.android.omni.ShopsListActivity.LOG_TAG;
 
 /**
  * Created by vamsi on 19-11-2016.
@@ -23,10 +23,6 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
     private List<StoreModel> store = new ArrayList<>();
     private int itemResource;
     private Context context;
-
-    public List<StoreModel> getStore() {
-        return store;
-    }
 
     public void setStore(List<StoreModel> store) {
         this.store = store;

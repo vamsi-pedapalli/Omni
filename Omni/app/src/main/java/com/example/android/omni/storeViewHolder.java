@@ -84,13 +84,6 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
         Intent i = new Intent(context,RetailerProfileActivity.class);
         context.startActivity(i);
 
-
-
-//        if (this.StoreModel != null) {
-
-//        Toast.makeText(this.context, "Clicked on " , Toast.LENGTH_SHORT ).show();
-
-
     }
 
     private String formatdouble(double rating) {

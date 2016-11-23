@@ -36,7 +36,7 @@ public class RetailerProfileActivity extends AppCompatActivity implements View.O
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.profile_page_menu, menu);
         return true;
     }
 
