@@ -52,8 +52,8 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
     @Override
     public int getItemCount() {
 
-        Log.e(LOG_TAG, "stores size");
-        return store.size();
+        Log.e(LOG_TAG, "stores size"+ store.size());
+        return this.store.size();
     }
 
 

@@ -22,30 +22,48 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.attr.data;
+
 public class ShopsListActivity extends AppCompatActivity {
 
     private RecyclerView listView;
     private StoreListAdapter mAdapter;
     private List<StoreModel> store = new ArrayList<>();
     public static final String LOG_TAG = ShopsListActivity.class.getName();
-    private String sampleURL = "http://104.199.230.125/stores/1.json/";
-    private TextView mEmptyStateTextView;
-
+    private StringBuilder sampleURL =
+            new StringBuilder("http://104.199.230.125/stores/?lat=15.073&long=83.398&distance=3.0");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LOG_TAG, "shoplist created");
         setContentView(R.layout.activity_shops_list);
+        Log.d(LOG_TAG, "list activity updated");
         setupActionbarTheme();
+        Log.d(LOG_TAG, "actionbar setup");
 
-        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
+        HomePageActivity home = new HomePageActivity();
+        Log.d(LOG_TAG, "updated locations" + home.getCurrentLongitude());
+
+        updateURL(home.getCurrentLatitude(), home.getCurrentLongitude(), 3);
+        Log.d(LOG_TAG, "updated locations" + home.getCurrentLatitude() + "  " + home.getCurrentLongitude());
+
+
+        TextView mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = connectivityManager.getActiveNetworkInfo();
 
         if (info != null && info.isConnected()) {
             StoresAsyncTask task = new StoresAsyncTask();
-            task.execute(sampleURL);
+//            task.execute(sampleURL);
+//            Log.d(LOG_TAG, "URL before is " + sampleURL.toString());
+//            HomePageActivity home = new HomePageActivity();
+//            updateURL(home.getCurrentLatitude(),home.getCurrentLongitude(),5);
+            Log.d(LOG_TAG, "URL Now is " + sampleURL.toString());
+            task.execute(sampleURL.toString());
+            Log.d(LOG_TAG, "task executing in back with " + sampleURL.toString());
+
         } else {
 
             View loadingIndicator = findViewById(R.id.loading_indicator);
@@ -59,17 +77,8 @@ public class ShopsListActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         listView.setLayoutManager(layoutManager);
-
+        listView.setNestedScrollingEnabled(false);
         listView.setAdapter(mAdapter);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                Intent i = new Intent(ShopsListActivity.this, RetailerProfileActivity.class);
-//                startActivity(i);
-//            }
-//        });
-
     }
 
 //    private void loadData() {
@@ -105,54 +114,37 @@ public class ShopsListActivity extends AppCompatActivity {
 //        stores.add(new StoreModel(R.drawable.zara, "ZARA", "Madhura nagar", "08:00AM to 7:00PM", 3.5, 1103, false, false, true));
 
 
-    private class StoresAsyncTask extends AsyncTask<String, Void, List<StoreModel>> {
+    public class StoresAsyncTask extends AsyncTask<String, Void, List<StoreModel>> {
         @Override
         protected List<StoreModel> doInBackground(String... URLs) {
 
-
+            Log.d(LOG_TAG, "Async task doing in background");
             if (URLs.length < 1 || URLs[0] == null) {
-                Log.e("QueryUtils", "URL is is null");
+                Log.e(LOG_TAG, "URL is null");
                 return null;
             }
-            Log.e("QueryUtils", "URL is not null" + URLs[0]);
 
-            return QueryHandler.fetchStoreData(URLs[0]);
+            Log.e(LOG_TAG, "URL is not null" + URLs[0]);
+            Log.d(LOG_TAG, "fetching storedata");
+            List<StoreModel> fetchedList = QueryHandler.fetchStoreData(URLs[0]);
+            Log.d(LOG_TAG, "list fetched");
+            return fetchedList;
+
         }
-//
-//        @Override
-//        protected void onPostExecute(List<StoreModel> data) {
-//
-//            listView.setAdapter(mAdapter);
-//            super.onPostExecute(data);
-////            Log.e("QueryUtils", "URL is is null" + data);
-//
-////            mAdapter = new StoreListAdapter(ShopsListActivity.this, R.layout.list_item_layout, stores);
-////            RecyclerView listView = (RecyclerView) findViewById(R.id.store_list);
-////            listView.setAdapter(mAdapter);
-//
-//
-//
-//        }
-
 
         @Override
-        protected void onPostExecute(List<StoreModel> data) {
-            Log.e("QueryUtils", "on post execute");
+        protected void onPostExecute(List<StoreModel> listdata) {
+            Log.e("QueryUtils", "post execution started");
 //            Toast.makeText(ShopsListActivity.this, "post executed",Toast.LENGTH_SHORT).show();
             View loadingIndicator = findViewById(R.id.loading_indicator);
 
-            if (data != null && !data.isEmpty()) {
-                mAdapter.setStore(data);
+            if (listdata != null && !listdata.isEmpty()) {
+                mAdapter.setStore(listdata);
+                Log.d(LOG_TAG, "setting store data" + listdata);
                 mAdapter.notifyDataSetChanged();
+                Log.d(LOG_TAG, "data set changed" + listdata);
                 loadingIndicator.setVisibility(View.GONE);
             }
-//            listView.setAdapter(mAdapter);
-//            super.onPostExecute(data);
-//            stores.addAll(data);
-//            mAdapter = new StoreListAdapter(ShopsListActivity.this, R.layout.list_item_layout, data);
-//            listView.setAdapter(mAdapter);
-//            super.onPostExecute(data);
-
         }
     }
 
@@ -193,6 +185,18 @@ public class ShopsListActivity extends AppCompatActivity {
 
         }
     }
+
+    public void updateURL(double lat, double lon, double dist) {
+        Log.d(LOG_TAG, "updating URL" + sampleURL);
+
+        sampleURL.replace(sampleURL.indexOf("=") + 1,
+                sampleURL.length() + 1,
+                lat + "&long=" + lon + "&distance=" + dist);
+        Log.d(LOG_TAG, "url updated" + sampleURL);
+
+    }
+
+
 }
 
 

@@ -18,7 +18,11 @@ public class StoreModel {
    private boolean isThereMen;
    private boolean isThereWomen;
 
-    public StoreModel(int wallpaperId,String name, String address, String time) {
+    public void setStoreDistance(double storeDistance) {
+        this.storeDistance = storeDistance;
+    }
+
+    public StoreModel(int wallpaperId, String name, String address, String time) {
 
         storeWallpaperId = wallpaperId;
 //        storeDistance = distance;

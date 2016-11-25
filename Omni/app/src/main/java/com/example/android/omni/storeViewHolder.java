@@ -55,7 +55,8 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
         this.storeAddress.setText(stores.getStoreAddress());
         this.storeOpenStatusTime.setText(stores.getStoreOpenStatusTime());
 
-        String formattedDistance = formatdouble(stores.getStoreDistance()) + " km";
+        double dist = stores.getStoreDistance()/1000;
+        String formattedDistance = (formatdouble(dist)) + " km";
         this.storeDistance.setText(formattedDistance);
 
         String bookmarksNumber = Integer.toString(stores.getNoOfBookmarks());
@@ -89,5 +90,9 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
     private String formatdouble(double rating) {
         DecimalFormat ratingFormat = new DecimalFormat("#.00");
         return ratingFormat.format(rating);
+    }
+
+    public void setStoreDistance(TextView storeDistance) {
+        this.storeDistance = storeDistance;
     }
 }
