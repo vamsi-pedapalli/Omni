@@ -10,13 +10,14 @@ public class StoreModel {
 
     private String storeName;
     private String storeAddress;
-    private String storeOpenStatusTime;
+    private String OpenTime;
+    private String CloseTime;
     private int storeWallpaperId;
     private double storeDistance;
     private int noOfBookmarks;
     private boolean isThereKids;
-   private boolean isThereMen;
-   private boolean isThereWomen;
+    private boolean isThereMen;
+    private boolean isThereWomen;
 
     public void setStoreDistance(double storeDistance) {
         this.storeDistance = storeDistance;
@@ -26,7 +27,7 @@ public class StoreModel {
 
         storeWallpaperId = wallpaperId;
 //        storeDistance = distance;
-        storeOpenStatusTime = time;
+//        storeOpenStatusTime = time;
         storeName = name;
         storeAddress = address;
 //        noOfBookmarks = bookmarks;
@@ -34,12 +35,11 @@ public class StoreModel {
     }
 
 
-
     public StoreModel(String name, String address, String time, double distance, int bookmarks) {
 
 //        storeWallpaperId = wallpaperId;
         storeDistance = distance;
-        storeOpenStatusTime = time;
+//        storeOpenStatusTime = time;
         storeName = name;
         storeAddress = address;
         noOfBookmarks = bookmarks;
@@ -51,7 +51,7 @@ public class StoreModel {
 
         storeWallpaperId = wallpaperId;
         storeDistance = distance;
-        storeOpenStatusTime = time;
+//        storeOpenStatusTime = time;
         storeName = name;
         storeAddress = address;
         noOfBookmarks = bookmarks;
@@ -59,17 +59,31 @@ public class StoreModel {
     }
 
 
-    public StoreModel(int wallpaperId, String name, String address, String time, double distance, int bookmarks, boolean man, boolean woman,boolean kid) {
+    public StoreModel(int wallpaperId, String name, String address, String time, double distance, int bookmarks, boolean man, boolean woman, boolean kid) {
 
         storeWallpaperId = wallpaperId;
         storeDistance = distance;
-        storeOpenStatusTime = time;
+//        storeOpenStatusTime = time;
         storeName = name;
         storeAddress = address;
         noOfBookmarks = bookmarks;
-        isThereKids=kid;
-        isThereMen=man;
-        isThereWomen=woman;
+        isThereKids = kid;
+        isThereMen = man;
+        isThereWomen = woman;
+    }
+
+    public StoreModel(int wallpaperId, String name, String address, String opentime, String closetime, double distance, int bookmarks, boolean man, boolean woman, boolean kid) {
+
+        storeWallpaperId = wallpaperId;
+        storeDistance = distance;
+        OpenTime = opentime;
+        CloseTime = closetime;
+        storeName = name;
+        storeAddress = address;
+        noOfBookmarks = bookmarks;
+        isThereKids = kid;
+        isThereMen = man;
+        isThereWomen = woman;
     }
 
     public String getStoreName() {
@@ -80,8 +94,12 @@ public class StoreModel {
         return storeAddress;
     }
 
-    public String getStoreOpenStatusTime() {
-        return storeOpenStatusTime;
+    public String getOpenTime() {
+        return OpenTime;
+    }
+
+    public String getCloseTime() {
+        return CloseTime;
     }
 
     public int getStoreWallpaperId() {

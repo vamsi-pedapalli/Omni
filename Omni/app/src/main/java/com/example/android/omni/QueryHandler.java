@@ -129,7 +129,7 @@ public class QueryHandler {
                 men = storedetails.getBoolean("for_men");
                 women = storedetails.getBoolean("for_women");
                 kids = storedetails.getBoolean("for_kids");
-                time = openingTime + " to " + closingTime;
+//                time = openingTime + " to " + closingTime;
                 double storeLatitude = storedetails.getDouble("latitude");
                 double storeLongitude = storedetails.getDouble("longitude");
                 String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
@@ -137,7 +137,7 @@ public class QueryHandler {
                 String locationURL = updateLocURL(userLat, userLon, storeLatitude, storeLongitude);
                 double dist = calculateDistance(locationURL);
 
-                StoreModel store = new StoreModel(R.drawable.woodland, storeName, area, time, dist, 100, men, women, kids);
+                StoreModel store = new StoreModel(R.drawable.woodland, storeName, area, openingTime, closingTime, dist, 100, men, women, kids);
                 Store.add(store);
                 Log.e("QueryUtils", storeName + area + time + dist + 100 + men + women + kids + " " + currentDateTimeString);
             }

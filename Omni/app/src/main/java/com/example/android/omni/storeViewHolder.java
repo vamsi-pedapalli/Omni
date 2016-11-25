@@ -3,11 +3,16 @@ package com.example.android.omni;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by vamsi on 21-11-2016.
@@ -24,6 +29,7 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
     private ImageView men;
     private ImageView women;
     private ImageView kids;
+    private TextView openStatus;
 
     private StoreModel stores;
     private Context context;
@@ -42,47 +48,60 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
         this.men = (ImageView) itemView.findViewById(R.id.icon_man);
         this.women = (ImageView) itemView.findViewById(R.id.icon_woman);
         this.kids = (ImageView) itemView.findViewById(R.id.icon_kid);
+        this.openStatus = (TextView) itemView.findViewById(R.id.open_status);
 
         itemView.setOnClickListener(this);
 
     }
 
-    public void bindStoreData(StoreModel stores){
+    public void bindStoreData(StoreModel stores) {
 
         this.stores = stores;
 
         this.storeName.setText(stores.getStoreName());
         this.storeAddress.setText(stores.getStoreAddress());
-        this.storeOpenStatusTime.setText(stores.getStoreOpenStatusTime());
+        this.storeOpenStatusTime.setText(stores.getOpenTime() +" to "+ stores.getCloseTime() );
 
-        double dist = stores.getStoreDistance()/1000;
+        double dist = stores.getStoreDistance() / 1000;
         String formattedDistance = (formatdouble(dist)) + " km";
         this.storeDistance.setText(formattedDistance);
 
         String bookmarksNumber = Integer.toString(stores.getNoOfBookmarks());
-        this.storeNoOfBookmarks.setText(bookmarksNumber + "Marks");
+        this.storeNoOfBookmarks.setText(bookmarksNumber + " Marks");
 
         this.storeWallpaper.setImageResource(stores.getStoreWallpaperId());
 
 
-        if(!(stores.isThereMen())){
+        if (!(stores.isThereMen())) {
             this.men.setVisibility(View.GONE);
         }
 
-        if(!(stores.isThereWomen())){
+        if (!(stores.isThereWomen())) {
             this.women.setVisibility(View.GONE);
         }
 
-        if(!(stores.isThereKids())){
+        if (!(stores.isThereKids())) {
             this.kids.setVisibility(View.GONE);
         }
+
+        try {
+            if (checkTime(stores.getOpenTime(), stores.getCloseTime())) {
+                this.openStatus.setText("Open Now");
+            } else {
+                this.openStatus.setText("Closed");
+
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
     @Override
     public void onClick(View v) {
 
-        Intent i = new Intent(context,RetailerProfileActivity.class);
+        Intent i = new Intent(context, RetailerProfileActivity.class);
         context.startActivity(i);
 
     }
@@ -92,7 +111,27 @@ public class storeViewHolder extends RecyclerView.ViewHolder implements View.OnC
         return ratingFormat.format(rating);
     }
 
-    public void setStoreDistance(TextView storeDistance) {
-        this.storeDistance = storeDistance;
+    private boolean checkTime(String openTime, String closeTime) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        boolean checked = false;
+
+        try {
+            String currentDateString = DateFormat.getTimeInstance().format(new Date());
+            Date currentTime = sdf.parse(currentDateString);
+            Date opentime = sdf.parse(openTime);
+            Date closetime = sdf.parse(closeTime);
+            Log.e("QueryUtils", "open time is" + opentime + "close time" + closetime + "current time" + currentTime);
+            if (currentTime.after(opentime) && currentTime.before(closetime)) {
+                checked = true;
+            }
+
+        } catch (ParseException e) {
+            Log.e("QueryUtils", "open time is" + openTime + "close time" + closeTime + "current time");
+            Log.e("QueryUtils", "Problem checking open status", e);
+
+        }
+
+        return checked;
+
     }
 }
