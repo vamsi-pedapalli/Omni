@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    style="@style/card_style"
+    card_view:cardCornerRadius="2dp">
+
+    <LinearLayout
+        style="@style/basic_card_layout"
+        android:orientation="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/basic_layout"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/icon"
+                    android:src="@drawable/call_button_vector" />
+
+                <TextView
+                    style="@style/small_text_grey"
+                    android:layout_gravity="center"
+                    android:text="Call" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/icon"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rating_vector" />
+
+                <TextView
+                    style="@style/small_text_grey"
+                    android:layout_gravity="center"
+                    android:text="Rate" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/icon"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/colored_bookmark" />
+
+                <TextView
+                    style="@style/small_text_grey"
+                    android:layout_gravity="center"
+
+                    android:text="Bookmark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/icon"
+                    android:src="@drawable/location_vector_red" />
+
+                <TextView
+                    style="@style/small_text_grey"
+                    android:layout_gravity="center"
+
+                    android:text="Check-in" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/divider_line" />
+
+        <LinearLayout style="@style/basic_layout">
+
+            <TextView
+                style="@style/header_style"
+                android:layout_marginRight="16dp"
+                android:text="Ongoing offers :" />
+
+            <TextView
+                style="@style/small_text_grey"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:text="Upto 80% off"
+                android:textStyle="italic" />
+
+            <TextView
+                style="@style/small_text_grey"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:text="@string/more_offers"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <View style="@style/divider_line" />
+
+        <LinearLayout style="@style/basic_layout">
+
+            <TextView
+                style="@style/header_style"
+                android:layout_marginRight="16dp"
+                android:text="Latest Collections :"/>
+
+            <TextView
+                style="@style/small_text_grey"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Ongoing offers"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

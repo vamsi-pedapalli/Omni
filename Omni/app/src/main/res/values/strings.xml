@@ -4,7 +4,7 @@
     <string name="underlined_rate">Rate</string>
     <string name="Lengthy_string">Ground floor, pheonix market city, mahadevapura, whitefield,- 888588</string>
     <string name="too_lengthy">Address : Ground floor, pheonix market city, mahadevapura, whitefield,- 888588Address : Ground floor, pheonix market city, mahadevapura, whitefield,- 888588</string>
-    <string name="similar_stores">Similar Stores</string>
+    <string name="similar_stores"><u>Similar Stores</u></string>
     <string name="men_women_children">Men | Women | Children</string>
     <string name="for_word">For</string>
     <string name="store_details">Store Details</string>
@@ -32,4 +32,14 @@
     <string name="_100_feet_road_indiranagar">100 Feet Road, Indiranagar</string>
     <string name="_1_2_km">1.2 km</string>
     <string name="no_internet">No Internet Connection</string>
+    <string name="more_offers"><u>More offers</u></string>
+    <string name="about_the_store"><u>About the Store</u></string>
+    <string name="Exchange_policy"><u>Exchange Policy</u></string>
+    <string name="go_to_site"><u>Go to site</u></string>
+    <string name="view_all"><u>View all</u></string>
+    <string name="Exchange_policy_detailed">If you\'re exchanging the same item for a different size, we\'ll cover any increase in the item since your purchase. If the item you\'re exchanging costs less that your original purchase we will refund you the difference.
+
+This policy refers to color/size exchanges only. Amazon does not price match, except for TVs with select retailers.</string>
+    <string name="about_the_store_detailed">Amazon.com, often simply Amazon, is an American electronic commerce and cloud computing company, founded in July 5, 1994 by Jeff Bezos and based in Seattle, Washington. Wikipedia</string>
+
 </resources>

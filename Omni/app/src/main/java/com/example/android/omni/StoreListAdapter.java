@@ -11,24 +11,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.media.CamcorderProfile.get;
-import static com.example.android.omni.ShopsListActivity.LOG_TAG;
+import static com.example.android.omni.StoreListActivity.LOG_TAG;
 
 /**
  * Created by vamsi on 19-11-2016.
  */
 
 
-public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
+public class StoreListAdapter extends RecyclerView.Adapter<StoreListViewHolder> {
 
-    private List<StoreModel> store = new ArrayList<>();
+    private List<StoreListModel> store = new ArrayList<>();
     private int itemResource;
     private Context context;
 
-    public void setStore(List<StoreModel> store) {
+    public void setStore(List<StoreListModel> store) {
         this.store = store;
     }
 
-    public StoreListAdapter(Context context, int itemResource, List<StoreModel> store) {
+    public StoreListAdapter(Context context, int itemResource, List<StoreListModel> store) {
 
         this.store = store;
         this.itemResource = itemResource;
@@ -36,16 +36,16 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
     }
 
     @Override
-    public storeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public StoreListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.list_item_layout, parent, false);
+                R.layout.store_list_laout, parent, false);
 
-        return new storeViewHolder(this.context, view);
+        return new StoreListViewHolder(this.context, view);
     }
 
     @Override
-    public void onBindViewHolder(storeViewHolder holder, int position) {
-        StoreModel stores = this.store.get(position);
+    public void onBindViewHolder(StoreListViewHolder holder, int position) {
+        StoreListModel stores = this.store.get(position);
         holder.bindStoreData(stores);
     }
 
@@ -65,11 +65,11 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
 //        View listItemView = convertView;
 //
 //
-//        com.example.android.omni.storeViewHolder viewHolder = new com.example.android.omni.storeViewHolder();
+//        com.example.android.omni.StoreListViewHolder viewHolder = new com.example.android.omni.StoreListViewHolder();
 //
 //        if (listItemView == null) {
 //            listItemView = LayoutInflater.from(getContext()).inflate(
-//                    R.layout.list_item_layout, parent, false);
+//                    R.layout.store_list_laout, parent, false);
 //
 //            viewHolder.storeWallpaper = (ImageView) listItemView.findViewById(R.id.store_wallpaper);
 //            viewHolder.storeName = (TextView) listItemView.findViewById(R.id.store_name);
@@ -85,10 +85,10 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
 //
 //
 //        } else {
-//            viewHolder = (com.example.android.omni.storeViewHolder) listItemView.getTag();
+//            viewHolder = (com.example.android.omni.StoreListViewHolder) listItemView.getTag();
 //        }
 //
-//        StoreModel currentStore = getItem(position);
+//        StoreListModel currentStore = getItem(position);
 //
 //        viewHolder.storeName.setText(currentStore.getStoreName());
 //        viewHolder.storeAddress.setText(currentStore.getStoreAddress());
@@ -121,7 +121,7 @@ public class StoreListAdapter extends RecyclerView.Adapter<storeViewHolder> {
 //        DecimalFormat ratingFormat = new DecimalFormat("#.00");
 //        return ratingFormat.format(rating);
 //    }
-//    static class com.example.android.omni.storeViewHolder {
+//    static class com.example.android.omni.StoreListViewHolder {
 //        TextView storeName;
 //        TextView storeDistance;
 //        TextView storeAddress;

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    style="@style/card_style"
+    card_view:cardCornerRadius="2dp">
+
+    <LinearLayout
+        style="@style/basic_card_layout"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/header_style"
+            android:layout_marginBottom="8dp"
+            android:text="@string/similar_stores" />
+
+
+        <HorizontalScrollView
+            style="@style/basic_layout"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/store_suggestions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+                <ImageView
+                    style="@style/store_icon"
+                    android:src="@drawable/store_ico" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

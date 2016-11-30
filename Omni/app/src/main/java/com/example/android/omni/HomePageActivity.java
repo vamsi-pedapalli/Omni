@@ -1,6 +1,5 @@
 package com.example.android.omni;
 
-import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -45,17 +44,8 @@ public class HomePageActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "home page created");
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.home_page_activity);
         Log.d(TAG, "home page updated");
-
-        Button but = (Button) findViewById(R.id.home_page_button);
-        but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomePageActivity.this, ShopsListActivity.class);
-                startActivity(i);
-            }
-        });
 
         if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(this)
@@ -73,6 +63,29 @@ public class HomePageActivity
                 .setFastestInterval(1 * 1000); // 1 second, in milliseconds
         Log.d(TAG, "location request set-up");
 
+
+        Button but = (Button) findViewById(R.id.home_page_button);
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomePageActivity.this, StoreListActivity.class);
+                i.putExtra("USER_LATITUDE", currentLatitude);
+                i.putExtra("USER_LONGITUDE", currentLongitude);
+                Log.d(TAG, "lat and long "+ currentLatitude + " " + currentLongitude);
+                startActivity(i);
+
+            }
+        });
+
+        Button butt = (Button) findViewById(R.id.filterpageee);
+        butt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomePageActivity.this, FilterPageActivity.class);
+                startActivity(i);
+
+            }
+        });
 
     }
 

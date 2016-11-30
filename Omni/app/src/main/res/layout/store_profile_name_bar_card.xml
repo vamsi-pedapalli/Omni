@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_below="@+id/viewpager_layout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    app:layout_collapseMode="parallax"
+    android:layout_height="wrap_content"
+    android:background="@color/brand_red">
+
+    <RelativeLayout
+        style="@style/basic_layout"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/store_name_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Allen Solly"
+            android:textAllCaps="true"
+            android:visibility="invisible"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_marginBottom="2dp"
+            />
+
+        <TextView
+            android:id="@+id/area_name_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/store_name_profile"
+            android:maxLines="1"
+            android:layout_marginTop="2dp"
+            android:text="Pheonix market city"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/rating_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="4.8"
+            android:textColor="@android:color/white"
+            android:layout_alignParentRight="true"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/no_of_ratings_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textColor="@android:color/white"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/rating_profile"
+            android:text="2488"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
